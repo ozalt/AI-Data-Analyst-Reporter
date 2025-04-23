@@ -89,6 +89,24 @@ You must install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or 
 
 ---
 
+# 3. **Download and Setup a Local LLM**
+We use `llama.cpp` to run local models. You must download a gguf model file; only Qwen, Mistral, Lama3.1 are compatible so far and place it in the `GGUF Models/` directory.
+
+Example (manual download):
+- HuggingFace: https://huggingface.co/TheBloke
+- Place `.gguf` file in:  
+  ```
+  ./GGUF Models/<model-name>.gguf
+  ```
+
+Currently, the prompt format is set for Qwen 2.5 models(can be changed to Mistral and Llama3.1) within source file. Suggestion would be to start with a decent Qwen 2.5 model.
+In source file, line no. 309, change the model name:
+```bash
+AIReportGenerator("GGUF Models\ <modelname> .gguf")
+```
+
+
+
 # 🚀 You're Ready!
 
 After activating the environment, you can run the project using:
